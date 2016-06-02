@@ -17,6 +17,10 @@ const config = {
     filename: 'bundle.js'
   },
 
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.css', '.png', '.jpg']
+  },
+
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
