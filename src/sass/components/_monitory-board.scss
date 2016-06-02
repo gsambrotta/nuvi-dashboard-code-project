@@ -1,0 +1,41 @@
+@import '../base/colors';
+
+.board {
+	.nav { 
+	  margin: 20px 0;
+    left: 40px;
+    position: relative;
+
+		li {
+			margin: 0 5px;
+			&:first-child {
+				margin-left: 0px;
+			}
+
+			&.btn {
+				border: 1px solid $main-color;
+				background: transparent;
+				color: $main-color;
+				font-size: 1.2rem;
+				padding: 8px 15px;
+				border-radius: 0px;
+				border-top-right-radius: 2px;
+				border-top-left-radius: 2px;
+			}
+
+			&.btn:hover {
+				background: $main-color;
+				color: $white;
+				padding: 8px 15px;
+			}
+
+			&.btn.active {
+				background: $main-color;
+				color: $white;
+				&:hover {
+					background: $main-color-darker;
+				}
+			}
+		}
+	}
+}

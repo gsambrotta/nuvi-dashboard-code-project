@@ -1,0 +1,134 @@
+
+// Basic and common style
+// -----------------------
+
+html {
+	height: 100%;
+}
+
+body {
+	color: $text-color;
+	height: 100%;
+	//background-color: $main-color;
+}
+
+*:focus {
+    outline: 0;
+}
+
+// Headers
+.title {
+	font-size: 2rem;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+
+
+// List 
+.list--inline {
+	display: flex;
+	flex-wrap: wrap;
+	@include breakpoint(tablet) {
+		flex-wrap: nowrap
+	}
+
+	li {
+		display: inline;
+	}
+}
+
+// Links
+a {
+	text-decoration: none;
+}
+
+.smallLink {
+	color: $text-color;
+	cursor: pointer;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+
+img {
+	width: 100%;
+}
+
+
+main {
+  padding: 20px 40px;
+  margin: 0 auto;
+  //max-width: 900px;
+}
+
+// Buttons
+.btn {
+	border: 1px solid $secondary-color;
+  padding: 7px 10px;
+  background-color: $secondary-color;
+  color: white;
+  border-radius: 2px;
+  font-family: 'Tahoma', 'Geneva', sans-serif;
+  text-transform: uppercase;
+
+	a {
+		color: $secondary-color;
+		text-transform: uppercase;
+	}
+
+	&:hover {
+		background-color: $secondary-color;
+		padding: 7px 10px;
+
+		a {
+			color: $main-color;
+		}
+	}
+}
+
+.btn-small {
+	font-size: 1.2rem
+}
+
+header {
+	background-color: $dark-blue;
+	color: $white;
+	padding: 0px 40px; 
+}
+
+sidebar {
+	background-color: $dark-blue;
+	min-width: 40px;
+	padding: 30px 0px 10px; 
+	float: left;
+	height: 100%;
+
+	li {
+		padding: 20px 40px;
+		border-bottom: 1px solid $dark-blue-second;
+		text-align: center;
+
+		&:last-child {
+			border-bottom: 0px;
+		}
+
+		a {
+			color: $white;
+			text-transform: uppercase;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: rgba($white, .6);
+			}
+		}
+
+		&.active a {
+			color: rgba($white, .6);
+		}
+	}
+}
+
+
