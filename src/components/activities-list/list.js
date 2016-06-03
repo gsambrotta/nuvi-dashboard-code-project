@@ -10,7 +10,10 @@ const List = (props) => {
       <header className={props.provider}> <i className={`fa fa-${props.provider}`} aria-hidden='true'></i> </header>
       <div className='activity-box_message'>
         <Avatar image={props.avatar}/>
-        <h3><a href={props.actorUrl} target='_blank'> {props.username} </a></h3>
+        <h3>
+          <a href={props.actorUrl} target='_blank'> {props.username} </a> 
+          <span className='date'> {props.date} </span>
+        </h3>
         <p> {props.msg} </p>
       </div>
       <footer>
@@ -27,7 +30,16 @@ const List = (props) => {
   );
 };
 
-List.propTypes = { };
+List.propTypes = { 
+  provider: React.PropTypes.string.isRequired,
+  avatar: React.PropTypes.string.isRequired,
+  actorUrl: React.PropTypes.string.isRequired,
+  msgUrl: React.PropTypes.string.isRequired,
+  username: React.PropTypes.string.isRequired,
+  msg: React.PropTypes.string.isRequired,
+  date: React.PropTypes.string.isRequired
 
+};
+  
 export default List;
 

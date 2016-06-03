@@ -1,4 +1,5 @@
 @import '../../base/colors';
+@import '../../mixin/media-query';
 
 .social-count-wrap {
 	width: 20%;
@@ -25,9 +26,13 @@
 
 		i {
 			position: relative;
-			left: 45px;
 			font-size: 2rem;
 			margin-bottom: 14px;
+			left: 41%;
+
+			@include breakpoint(screen) {
+				left: 45%;
+			}
 		}
 
 		&.arrow_box {

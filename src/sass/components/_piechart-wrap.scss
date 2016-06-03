@@ -1,0 +1,34 @@
+@import '../base/colors';
+
+.piechart-wrap {
+	width: 200px;
+	margin: 0 auto;
+	margin-top: 50px;
+	position: relative;
+
+	h4 {
+		position: absolute;
+		width: 150px;
+
+		span {
+			font-size: 2rem;
+		}
+
+		&.positive {
+			color: $main-color;
+			left: -170px;
+		}
+
+		&.negative {
+			color: $secondary-color;
+			margin-top: 30px;
+		}
+
+		&.neutral {
+			color: $dark-blue;
+			left: 250px;
+			top: 50px;
+		}
+	}
+}
+

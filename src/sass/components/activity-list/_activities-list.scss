@@ -43,6 +43,12 @@
     			color: rgba($dark-blue, .6);	
     		}
     	}
+    	
+    	.date {
+	  		position: absolute;
+		    right: 10px;
+		    top: 58px;
+	  	}
 		}
 
 		p {

@@ -47,7 +47,9 @@ const ListWrap = (props) => {
   );
 };
 
-ListWrap.propTypes = { };
+ListWrap.propTypes = { 
+  activities: React.PropTypes.array.isRequired
+};
 
 export default ListWrap;
 

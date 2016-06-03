@@ -36,11 +36,11 @@ export default class App extends React.Component {
   componentDidMount() {
     this.loadActivities();
 
-    /*
     const reloadActivities = setInterval(() => {
       this.loadActivities();
-    }, 10000);
-    */ 
+    }, 20000);
+    
+
   }
 
   componentWillUnmount() {

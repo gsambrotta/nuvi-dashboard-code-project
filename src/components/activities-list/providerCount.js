@@ -6,10 +6,9 @@ import './../../sass/components/activity-list/_provider-count.scss';
 const SocialCount = (props) => {
 
   function showBoxForEachProvider() {
-    
     // group provider in an object
     let providers = props.providers;
-    let map = providers.reduce(function(prev, curr) {
+    let map = providers.reduce(function (prev, curr) {
       prev[curr] = (prev[curr] || 0) + 1;
       return prev;
     }, {}); 
@@ -23,8 +22,7 @@ const SocialCount = (props) => {
         let obj = { 
           name: key,
           count: map[key]
-        }
-
+        };
         array.push(obj);
       }
     }
@@ -37,11 +35,7 @@ const SocialCount = (props) => {
   function handleCountClick(e) {
     let target = e.target;
     let targetClass;
-    let activityBox = $('.activity-wrap');
     let activityBoxHeader = $('.activity-wrap header');
-    // find activity-map header hasClass === target
-    // if hidden -> show
-    // otherwise hide
 
     // find p tag target
     if (target.nodeName === 'P') {
@@ -51,7 +45,7 @@ const SocialCount = (props) => {
       targetClass = $(target).attr('class');
     }
 
-    //hide/show related activity box
+    // hide/show related activity box
     if ($(activityBoxHeader).hasClass(targetClass)) {
       let currentBoxClass = ($('.activity-wrap header.' + targetClass));
 
@@ -63,21 +57,21 @@ const SocialCount = (props) => {
         $(target).parent().css('opacity', '1');
       }
     }
-
   }
+
 
   return (
     <div className='social-count-wrap'>
-      { mapProviders.map( provider => {
-          return (
-            <div key={provider.name} 
-                  className={`arrow_box socialCount-box ${provider.name}`} 
-                  onClick={handleCountClick}> 
-              <i className={`fa fa-${provider.name}`} aria-hidden='true'></i> 
-              <p className={provider.name}>{provider.count}</p> 
-            </div>
-          )
-        })
+      {mapProviders.map(provider => {
+        return (
+          <div key={provider.name} 
+                className={`arrow_box socialCount-box ${provider.name}`} 
+                onClick={handleCountClick}> 
+            <i className={`fa fa-${provider.name}`} aria-hidden='true'></i> 
+            <p className={provider.name}>{provider.count}</p> 
+          </div>
+        );
+      })
       }
     </div>
   );

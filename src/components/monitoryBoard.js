@@ -22,7 +22,6 @@ export default class MonitoryBoard extends React.Component {
       showSentiment: false
     });
     let target = e.target;
-    console.log(target);
     $('.nav li').removeClass('active');
     $(target).addClass('active');
   }
@@ -38,15 +37,9 @@ export default class MonitoryBoard extends React.Component {
   }
 
   render() {
-    
-    const sentiments = this.props.activities.map(activity => { 
-      return (
-        <SentimentWrap 
-          key={activity.id}
-          id={activity.id}
-          sentiment={activity.activity_sentiment}
-        />
-      );
+    let arraySentiment = [];
+    this.props.activities.map(activity => { 
+      arraySentiment.push(activity.activity_sentiment);
     });
 
     return (
@@ -56,7 +49,7 @@ export default class MonitoryBoard extends React.Component {
           <li className='btn' onClick={this.handleClickSentiment.bind(this)}> Brand Overview </li>
         </ul>
         <div className='board-activity-wrap'>
-        { this.state.showActivities ? <ListWrap activities={this.props.activities}/> : sentiments }
+        { this.state.showActivities ? <ListWrap activities={this.props.activities}/> : <SentimentWrap sentiments={arraySentiment}/> }
         </div>
       </div>
     );
