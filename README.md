@@ -22,4 +22,4 @@ npm start lint
 
 # Final Result
 
-![alt tag](https://raw.githubusercontent.com/gsambrotta/react-message-app/master/screenshot-1.jpg)
+![alt tag](https://raw.githubusercontent.com/gsambrotta/nuvi-dashboard-code-project/master/screenshot-1.jpg)
