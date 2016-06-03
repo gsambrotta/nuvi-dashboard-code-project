@@ -2,8 +2,8 @@ import React from 'react';
 import $ from 'jquery';
 import './../sass/components/_monitory-board.scss';
 
-import ListWrap from './listWrap';
-import SentimentWrap from './SentimentWrap';
+import ListWrap from './activities-list/listWrap';
+import SentimentWrap from './sentiment-graphics/SentimentWrap';
 
 
 export default class MonitoryBoard extends React.Component {
@@ -38,17 +38,32 @@ export default class MonitoryBoard extends React.Component {
   }
 
   render() {
+    
+    const sentiments = this.props.activities.map(activity => { 
+      return (
+        <SentimentWrap 
+          key={activity.id}
+          id={activity.id}
+          sentiment={activity.activity_sentiment}
+        />
+      );
+    });
+
     return (
       <div className='board'>
         <ul className='nav list--inline titles-font'>
           <li className='btn active' onClick={this.handleClickActivities.bind(this)}> Activities </li>
           <li className='btn' onClick={this.handleClickSentiment.bind(this)}> Brand Overview </li>
         </ul>
-        {this.state.showActivities ? <ListWrap /> : <SentimentWrap /> }
+        <div className='board-activity-wrap'>
+        { this.state.showActivities ? <ListWrap activities={this.props.activities}/> : sentiments }
+        </div>
       </div>
     );
   }
 }
 
-MonitoryBoard.propTypes = { };
+MonitoryBoard.propTypes = { 
+  activities: React.PropTypes.array.isRequired
+};
 

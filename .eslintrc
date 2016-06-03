@@ -90,7 +90,7 @@
     "complexity": 0, // specify the maximum cyclomatic complexity allowed in a program (off by default)
     "consistent-return": 2, // require return statements to either always or never specify values
     "curly": 2, // specify curly brace conventions for all control statements
-    "default-case": 2, // require default case in switch statements (off by default)
+    "default-case": 1, // require default case in switch statements (off by default)
     "dot-notation": 1, // encourages use of dot notation whenever possible
     "eqeqeq": 2, // require the use of === and !==
     "guard-for-in": 2, // make sure for-in loops have an if statement (off by default)
@@ -224,7 +224,7 @@
     "max-params": [2, 5], // limits the number of parameters that can be used in the function declaration. (off by default)
     "max-statements": 0, // specify the maximum number of statement allowed in a function (off by default)
     "no-bitwise": 0, // disallow use of bitwise operators (off by default)
-    "no-plusplus": 2, // disallow use of unary operators, ++ and -- (off by default)
+    "no-plusplus": 1, // disallow use of unary operators, ++ and -- (off by default)
 
     //
     // eslint-plugin-react

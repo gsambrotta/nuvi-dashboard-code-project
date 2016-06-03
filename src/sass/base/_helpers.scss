@@ -24,3 +24,24 @@
 .font-titles {
 	font-family: 'Tahoma', 'Geneva', sans-serif;
 }
+
+
+.arrow_box {
+	position: relative;
+	background: $main-color;
+	
+	&:after {
+		right: 100%;
+		top: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(136, 183, 213, 0);
+		border-right-color: $main-color;
+		border-width: 20px;
+		margin-top: -20px;
+	}
+}

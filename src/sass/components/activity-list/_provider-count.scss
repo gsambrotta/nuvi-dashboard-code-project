@@ -1,0 +1,47 @@
+@import '../../base/colors';
+
+.social-count-wrap {
+	width: 20%;
+	margin: 0 0px 0 10px;
+	display: inline-block;
+
+	.socialCount-box {
+		width: 90%;
+		height: 100px;
+		margin-left: 20%;
+		margin-bottom: 15px;
+		padding: 30px 20px 0px;
+
+		&:hover {
+			opacity: .8;
+		}
+
+		i, p {
+			color: $white;
+			text-align: center;
+		}
+
+		p { font-size: 3rem; }
+
+		i {
+			position: relative;
+			left: 45px;
+			font-size: 2rem;
+			margin-bottom: 14px;
+		}
+
+		&.arrow_box {
+			&.facebook { background-color: #3b5999; }
+			&.twitter { background-color: #55acee; }
+			&.instagram { background-color: #3f729b; }
+			&.tumblr { background-color: #34465d; }
+		}
+
+		&.facebook.arrow_box::after { border-right-color: #3b5999; }
+		&.twitter.arrow_box::after { border-right-color: #55acee; }
+		&.instagram.arrow_box::after { border-right-color: #3f729b; }
+		&.tumblr.arrow_box::after { border-right-color: #34465d; }
+		
+	}
+
+}

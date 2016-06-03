@@ -5,27 +5,27 @@ import ReactDOM from 'react-dom';
 import {Route, IndexRoute, Router, browserHistory} from 'react-router';
 import $ from 'jquery';
 
-import Sidebar from './components/sidebar.js';
+import Sidebar from './components/common/sidebar.js';
 import MonitoryBoard from './components/monitoryBoard.js';
 
 import './sass/main.scss';
+import './../font/font-awesome/scss/font-awesome.scss';
 
 export default class App extends React.Component {
   constructor(props) {
     super();
 
     this.state = {
-      activties: []
+      activities: []
     };
   }
 
   loadActivities() {
     const self = this;
-
     $.getJSON(this.props.route.activitiesApi)
     .done(function (data) {
       self.setState({
-        activties: data
+        activities: data
       });
     })
     .fail(function (jqxhr, textstatus, err) {
@@ -36,15 +36,20 @@ export default class App extends React.Component {
   componentDidMount() {
     this.loadActivities();
 
+    /*
     const reloadActivities = setInterval(() => {
       this.loadActivities();
-    }, 20000); 
-    
+    }, 10000);
+    */ 
+  }
+
+  componentWillUnmount() {
+    clearInterval(reloadActivities);
   }
     
   render() {
     return (
-      <div>
+      <div className='app'>
         <header>
           <h1>Hi NUVI, Welcome back!</h1>
         </header>
