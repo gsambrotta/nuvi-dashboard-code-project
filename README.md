@@ -20,3 +20,6 @@ To lint your file before the app is running:
 npm start lint
 ```
 
+# Final Result
+
+![alt tag](https://raw.githubusercontent.com/gsambrotta/react-message-app/master/screenshot-1.jpg)
