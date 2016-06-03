@@ -12,12 +12,11 @@ module.exports = (PORT) => {
     publicPath: config.output.publicPath,
     hot: true,
     historyApiFallback: true,
-    open: true, // check if it works
     proxy: {
-      '/api': 'http://localhost:' + expressPort 
+      '/api': 'http://localhost:' + expressPort
     }
   });
-  
+
   server.listen(PORT, 'localhost', function (err) {
     if (err) {
       console.log(err);

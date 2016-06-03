@@ -2,8 +2,17 @@ import React from 'react';
 import PieChart from 'react-simple-pie-chart';
 
 import './../../sass/components/_piechart-wrap.scss';
-  
+
 const Sentiment = (props) => {
+  const pos = props.positive;
+  const neg = props.negative;
+  const neut = props.neutral;
+
+  // Find percentage
+  const tot = pos + neg + neut;
+  const posPerc = Number(((pos / tot) * 100).toFixed());
+  const negPerc = Number(((neg / tot) * 100).toFixed());
+  const neutPerc = Number(((neut / tot) * 100).toFixed());
 
   return (
     <section>
@@ -11,29 +20,29 @@ const Sentiment = (props) => {
 
     <div className='piechart-wrap'>
       <h4 className='positive'>
-        <span> {props.positive}% </span> say: We love NUVI! 
+        <span> {posPerc}% </span> say: We love NUVI!
       </h4>
       <PieChart
         slices={[
           {
             color: '#446CB3',
-            value: props.positive
+            value: posPerc
           },
           {
             color: '#FF7740',
-            value: props.negative
+            value: negPerc
           },
           {
             color: '#2C3E50',
-            value: props.neutral
+            value: neutPerc
           }
         ]}
       />
       <h4 className='negative'>
-        <span> {props.negative}% </span> say: You could do much much better, NUVI! 
+        <span> {negPerc}% </span> say: You could do much much better, NUVI!
       </h4>
       <h4 className='neutral'>
-        <span>{props.neutral}% </span> say: We don't really care about what's going on here. 
+        <span>{neutPerc}% </span> say: We don't really care about what's going on here.
       </h4>
     </div>
     </section>
