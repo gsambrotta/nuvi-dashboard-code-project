@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 import './../../sass/components/activity-list/_provider-count.scss';
   
@@ -30,18 +31,50 @@ const SocialCount = (props) => {
 
     return array;
   }
-
-
   const mapProviders = showBoxForEachProvider();
-  console.log(mapProviders);
+
+
+  function handleCountClick(e) {
+    let target = e.target;
+    let targetClass;
+    let activityBox = $('.activity-wrap');
+    let activityBoxHeader = $('.activity-wrap header');
+    // find activity-map header hasClass === target
+    // if hidden -> show
+    // otherwise hide
+
+    // find p tag target
+    if (target.nodeName === 'P') {
+      targetClass = $(target).attr('class');
+    } else {
+      target = $(target).find('p');
+      targetClass = $(target).attr('class');
+    }
+
+    //hide/show related activity box
+    if ($(activityBoxHeader).hasClass(targetClass)) {
+      let currentBoxClass = ($('.activity-wrap header.' + targetClass));
+
+      if (currentBoxClass.is(':visible')) {
+        currentBoxClass.parent().hide();
+        $(target).parent().css('opacity', '.6');
+      } else {
+        currentBoxClass.parent().show();
+        $(target).parent().css('opacity', '1');
+      }
+    }
+
+  }
 
   return (
     <div className='social-count-wrap'>
       { mapProviders.map( provider => {
           return (
-            <div key={provider.name} className={`arrow_box socialCount-box ${provider.name}`}> 
+            <div key={provider.name} 
+                  className={`arrow_box socialCount-box ${provider.name}`} 
+                  onClick={handleCountClick}> 
               <i className={`fa fa-${provider.name}`} aria-hidden='true'></i> 
-              <p>{provider.count}</p> 
+              <p className={provider.name}>{provider.count}</p> 
             </div>
           )
         })
