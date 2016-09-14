@@ -1,4 +1,4 @@
-# NUVI INTERVIEW CODE PROJECT
+# NUVI SOCIAL DASHBOARD - CODE PROJECT
 
 ## Goal:
 Buid a browser UI that displays Social Media activities and allows users to interact with the "actors" of these activities, such as liking or replying to these "actors".
@@ -14,10 +14,18 @@ npm start
 
 ```
 
+View the app at:
+
+```
+http://localhost:3001/monitory-board
+
+```
+
 To lint your file before the app is running:
 
 ```
 npm start lint
+
 ```
 
 # Final Result
