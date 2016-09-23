@@ -39,14 +39,14 @@ export default class App extends React.Component {
     const reloadActivities = setInterval(() => {
       this.loadActivities();
     }, 20000);
-    
+
 
   }
 
   componentWillUnmount() {
     clearInterval(reloadActivities);
   }
-    
+
   render() {
     return (
       <div className='app'>
@@ -61,11 +61,11 @@ export default class App extends React.Component {
           }
         </main>
       </div>
-    ); 
+    );
   }
 }
 
-App.propTypes = { 
+App.propTypes = {
   children: React.PropTypes.object.isRequired
 };
 

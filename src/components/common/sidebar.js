@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-  
+
 const Sidebar = (props) => {
 
   return (
@@ -14,7 +14,7 @@ const Sidebar = (props) => {
         <li><Link to={{ pathname: '/#' }}> Notes </Link></li>
       </ul>
     </sidebar>
-    
+
   );
 };
 
